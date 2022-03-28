@@ -10,14 +10,9 @@ public interface PostsService {
 	List<Post> retrieveAllPosts();
 
 	void addPosts(Post e,int idUser);
-
-	/*void deletePosts(int id);
-
-	Post updatePosts(Post e,int id,int id2);
-
-	Post retrievePosts(int id);
-	Employee retrieveBestPosts();
-	public Post retrieveBestPosts1();
-	public void  sendMAil();*/
+	Post updatePosts(Post e,int idpost,int idEmp);
+	void deletePosts(int id);
+	
+	
 
 }

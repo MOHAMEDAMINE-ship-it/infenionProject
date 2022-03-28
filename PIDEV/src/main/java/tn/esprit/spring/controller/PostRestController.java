@@ -16,31 +16,44 @@ import org.springframework.web.bind.annotation.RestController;
 import tn.esprit.spring.entities.Comment;
 import tn.esprit.spring.entities.Employee;
 import tn.esprit.spring.entities.Post;
-import tn.esprit.spring.service.LikeService;
+
 import tn.esprit.spring.service.PostsService;
 
 @RestController
 @RequestMapping("/post")
 public class PostRestController {
 	@Autowired
-	PostsService postxervice;
-	@Autowired
-	LikeService likesservice;
+	PostsService postservice;
+	
 	
 	@GetMapping("/retrive-posts")
 	public List<Post> getPosts() {
-		List<Post> listPost = postxervice.retrieveAllPosts();
+		List<Post> listPost = postservice.retrieveAllPosts();
 		return listPost;
-	}/*
+		
+	}
+	
+	// http://localhost:8081/SpringMVC/post/add-post/1
+	
+	@PostMapping("/add-post/{Employee_id}")
+	public void AddPost(@RequestBody Post p,@PathVariable("Employee_id") int employeeid)
+	{
+		postservice.addPosts(p,employeeid);
+	}
+	
+	// http://localhost:8081/SpringMVC/post/modify-post
+	
+	@PutMapping("/modify-post/{post-Id}/{employee_id}")
+	public void modifyEmployee(@RequestBody Post e,@PathVariable("post-Id") int postId,@PathVariable("employee_id") int employeeid) {
+		postservice.updatePosts(e,postId,employeeid);
+	}
+	
+	// http://localhost:8081/SpringMVC/post/remove-post/1
 	@DeleteMapping("/remove-post/{post-id}")
 	public void removeEmployee(@PathVariable("post-id") int employeeId) {
-		postxervice.deletePosts(employeeId);
+		postservice.deletePosts(employeeId);
 	}
-		@PostMapping("/add-post/{User_id}")
-		public void AddPost(@RequestBody Post p,@PathVariable("User_id") int userid)
-		{
-			postxervice.addPosts(p,userid);
-		}
+	/*
 		@PutMapping("/modify-post/{post-Id}/{user_id}")
 		public void modifyEmployee(@RequestBody Post e,@PathVariable("post-Id") int postId,@PathVariable("user_id") int userid) {
 			postxervice.updatePosts(e,postId,userid);

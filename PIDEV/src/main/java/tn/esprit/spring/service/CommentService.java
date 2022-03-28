@@ -14,7 +14,7 @@ public interface CommentService {
 
 	void updateComment(Comment e,int id);
 	public void addCommentt(Comment e);
-	public List retrieveCooment(int id) ;
+	public Comment retrieveCooment(int id) ;
 
 	
 }

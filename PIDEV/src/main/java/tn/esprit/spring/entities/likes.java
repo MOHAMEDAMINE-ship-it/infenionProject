@@ -16,7 +16,11 @@ import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 @Entity
-
+@Getter
+@Setter
+@AllArgsConstructor
+//@NoArgsConstructor
+@RequiredArgsConstructor
 public class likes {
 	private static final long serialVersionUID = 1L;
 
@@ -31,32 +35,5 @@ public class likes {
 	private Post posts;
 	@ManyToOne
 	private Employee employees;
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
-	public java.util.Date getDateDislike() {
-		return dateDislike;
-	}
-	public void setDateDislike(java.util.Date dateDislike) {
-		this.dateDislike = dateDislike;
-	}
-	public Post getPosts() {
-		return posts;
-	}
-	public void setPosts(Post posts) {
-		this.posts = posts;
-	}
-	public Employee getEmployees() {
-		return employees;
-	}
-	public void setEmployees(Employee employees) {
-		this.employees = employees;
-	}
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
 
 }

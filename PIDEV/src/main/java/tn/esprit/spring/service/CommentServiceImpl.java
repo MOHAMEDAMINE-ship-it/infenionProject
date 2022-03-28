@@ -50,9 +50,9 @@ public class CommentServiceImpl implements CommentService {
 
 
 	@Override
-	public List retrieveCooment(int id) {
-		// TODO Auto-generated method stub
-		return null;
+	public Comment retrieveCooment(int id) {
+		Comment comment = CommentRepository.findById(id).get();
+		return comment ;
 	}
 
 	@Override

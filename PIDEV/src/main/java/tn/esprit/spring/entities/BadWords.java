@@ -1,29 +1,34 @@
 package tn.esprit.spring.entities;
 
+import java.io.Serializable;
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.ManyToMany;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 @Entity
-
-public class Dislike{
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@RequiredArgsConstructor
+public class BadWords implements Serializable{
 	private static final long serialVersionUID = 1L;
-
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
-	private java.util.Date dateDislike;
-	//@ManyToOne
-	//private Post posts;
-	@ManyToOne
-	private Post posts;
-	@ManyToOne
-	private Employee employees;
+	private long idBadWords;
+	@NonNull private String nom;
+	
+
 }

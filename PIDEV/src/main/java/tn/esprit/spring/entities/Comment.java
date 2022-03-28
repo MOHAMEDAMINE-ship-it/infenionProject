@@ -6,7 +6,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -29,10 +32,14 @@ public class Comment  implements Serializable {
 	 private java.util.Date dateComment;
 	//@ToString.Exclude
 
-	
+//	@JsonBackReference
+	//@JoinColumn(name="idPost", nullable=false)
 	@ManyToOne
 	private Post posts;
 	
+	//@JsonBackReference
+
+	//@JoinColumn(name="idEmployee", nullable=false)
 	@ManyToOne
 	private Employee employees;
 

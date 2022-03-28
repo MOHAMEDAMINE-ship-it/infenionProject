@@ -40,17 +40,27 @@ EntrepriseRepository entrepriseRepository;
 	@Override
 	public Employee updateEmployee(Employee e,int idEntreprise) {
 		// TODO Auto-generated method stub
-		/*Entreprise entreprise= entrepriseRepository.findById(idEntreprise).orElse(null);
-		e.setEntreprises(entreprise);*/
-		e.setIdEmployee(idEntreprise);
-		employeeRepository.save(e);
-		return employeeRepository.save(e);
+		Entreprise entreprise= entrepriseRepository.findById(idEntreprise).orElse(null);
+		e.setEntreprises(entreprise);
+		
+		//System.out.println(e);
+		Employee employee = employeeRepository.save(e);
+		//System.out.println(employee);
+		return employee;
 	}
 
 	@Override
 	public Employee retrieveEmployee(int id) {
 		
 		return employeeRepository.findById(id).get();
+	}
+	
+	public void Ban(Employee e){
+		if(e.getNbre()==4){
+			e.setBan(true);
+			
+		}
+		
 	}
 
 }

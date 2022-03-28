@@ -15,11 +15,20 @@ import javax.persistence.OneToMany;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
 
 
 
 
 @Entity
+@ToString
+
+
 
 public class Entreprise   implements Serializable{
 	private static final long serialVersionUID = 1L;
@@ -28,7 +37,7 @@ public class Entreprise   implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idEntreprise;
 	
-	 private String nomEntreprise,email,password;
+	 private String nomEntreprise,email;
 	 private int numTel;
 	 @Enumerated(EnumType.STRING)
 	 private Domain domain;
@@ -41,11 +50,9 @@ public class Entreprise   implements Serializable{
 
 
 
-
 	public int getIdEntreprise() {
 		return idEntreprise;
 	}
-
 
 
 
@@ -55,11 +62,9 @@ public class Entreprise   implements Serializable{
 
 
 
-
 	public String getNomEntreprise() {
 		return nomEntreprise;
 	}
-
 
 
 
@@ -69,11 +74,9 @@ public class Entreprise   implements Serializable{
 
 
 
-
 	public String getEmail() {
 		return email;
 	}
-
 
 
 
@@ -83,18 +86,7 @@ public class Entreprise   implements Serializable{
 
 
 
-
-	public String getPassword() {
-		return password;
-	}
-
-
-
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
+	
 
 
 
@@ -104,11 +96,9 @@ public class Entreprise   implements Serializable{
 
 
 
-
 	public void setNumTel(int numTel) {
 		this.numTel = numTel;
 	}
-
 
 
 
@@ -118,11 +108,9 @@ public class Entreprise   implements Serializable{
 
 
 
-
 	public void setDomain(Domain domain) {
 		this.domain = domain;
 	}
-
 
 
 
@@ -132,21 +120,22 @@ public class Entreprise   implements Serializable{
 
 
 
-
 	public void setEmployees(Set<Employee> employees) {
 		this.employees = employees;
 	}
 
 
 
-
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-	
-	
 
-		
-	 
+
+
+
+    
+
+
+	
 	 
 }

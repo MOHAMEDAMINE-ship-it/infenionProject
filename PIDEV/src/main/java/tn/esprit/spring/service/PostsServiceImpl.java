@@ -1,24 +1,21 @@
 package tn.esprit.spring.service;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Date;
+
+
 import java.util.List;
-import java.util.stream.Collectors;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Service;
 
-
+import tn.esprit.spring.entities.BadWords;
 import tn.esprit.spring.entities.Employee;
 import tn.esprit.spring.entities.Entreprise;
 import tn.esprit.spring.entities.Post;
-
+import tn.esprit.spring.repository.BadWordsRepo;
 import tn.esprit.spring.repository.EmployeeRepository;
-import tn.esprit.spring.repository.LikeRepository;
+
 import tn.esprit.spring.repository.PostRepository;
 @Service
 public class PostsServiceImpl implements PostsService {
@@ -26,18 +23,14 @@ public class PostsServiceImpl implements PostsService {
 	PostRepository postRepository;
 	@Autowired
 	EmployeeRepository emRepository;
-	/*@Autowired
-	BadWordsRepo badwords;*/
-	@Autowired
-	LikeRepository LikeRepository;
-	@Autowired
 
-	/*private JavaMailSender javaMailSender;
 	@Autowired
-	private JavaMailSender javamil;
-	@Autowired
-	mailservice Ms;
-	//@Override*/
+	BadWordsRepo badwords;
+	
+	@Autowired EmailService es;
+	
+
+	
 
 	@Override
 	public List<Post> retrieveAllPosts() {
@@ -45,45 +38,85 @@ public class PostsServiceImpl implements PostsService {
 		 return listpost; 
 		
 	}
+	
+	
 
 	@Override
-	public void addPosts(Post e,int idUser) {
+	public void addPosts(Post e,int idEmployee) {
 		
 		//e.setDatePost(now);
-    Employee employee=emRepository.findById(idUser).get();
-	
-	
-	     e.setEmployees(employee);
-		 postRepository.save(e);}
-
-
-	/*@Override
-	public void deletePosts(int id) {
-		// TODO Auto-generated method stub
-		postRepository.deleteById(id);
+		 
+		 
+         Employee employee=emRepository.findById(idEmployee).get();
+	     if(employee.getNbre()==4){
+    		 
+    		 employee.setBan(true);
+    		 String msg= ("you've been banned because you've been using prohibited language more than 4 times which is against our user policy for further information contact us through our official email");
+    		 es.sendMail("ahmed1998benromdhane@gmail.com", employee.getEmail(), "Alert", msg);
+    	 }
+         if(!employee.isBan()){
+        	 
+         String Body = e.getBody();
+     	 String title=e.getTitle();
+     	 List<BadWords> BadWordss = (List<BadWords>) badwords.findAll();
+     	 boolean checkBody = checkBadWords(BadWordss,Body);
+    	 boolean checkTitle = checkBadWords(BadWordss,title);
+    	 if(employee.getNbre()<4)
+    	 {
+    	 if(checkBody == true || checkTitle == true)
+    	 {
+    			System.out.print("Offensive language detected, publication failed.");
+    			int nbre=employee.getNbre()+1;
+    			employee.setNbre(nbre);
+    			emRepository.save(employee);
+    			
+    			
+    			
+    		}
+    	 else if (checkBody == false || checkTitle== false ) 
+    		{
+    		
+    		     e.setEmployees(employee);
+    			 postRepository.save(e);
+    		}
+    		}
+    
+         }
+         else System.out.println("This employee is banned");
+         
 	}
+	
+
+	
+		 
 
 	@Override
 	public Post updatePosts(Post e,int idpost,int idEmp) {
+		
 		Employee client=emRepository.findById(idEmp).get();
+		
 		String Body = e.getBody();
-		String titre=e.getTitre();
+		String title=e.getTitle();
 		List<BadWords> BadWordss = (List<BadWords>) badwords.findAll();
-
 		boolean checkBody = checkBadWords(BadWordss,Body);
-		boolean checkTitle = checkBadWords(BadWordss,titre);
+		boolean checkTitle = checkBadWords(BadWordss,title);
 		if(checkBody == true || checkTitle == true)
 		{
-			System.out.print("Offensive language detected, publication failed.");
-		}else if (checkBody == false && checkTitle== false ) 
+			System.out.print("Prohibited language, publication failed.");
+			
+		}
+		else if (checkBody == false && checkTitle== false ) 
+		{
 		e.setIdPost(idpost);
+		e.setEmployees(client);
 		return postRepository.save(e);
+		}
+		return e;
 	}
-
 	@Override
-	public Post retrievePosts(int id) {
-		// TODO Auto-generated method stub
-		return postRepository.findById(id).get();
+	public void deletePosts(int id) {
+		
+		postRepository.deleteById(id);
 	}
 	public boolean checkBadWords(List<BadWords> words, String message) 
 	{
@@ -106,37 +139,7 @@ public class PostsServiceImpl implements PostsService {
 			return false;	
 	}
 
-	@Override
-	public Employee retrieveBestPosts() {
-		 int idEmploye = postRepository.getEmployeWithMostPosts();
-		return emRepository.findById(idEmploye).get();
-		
-	}
-	@Override
-	public Post retrieveBestPosts1() {
-		 int idpost = LikeRepository.getPostsWithMostLikes();
-		return postRepository.findById(idpost).get();
-		
-	}
-	@Override
-	public void  sendMAil() {
-		Date date = new Date();
-		String strDateFormat = "hh:mm:ss a";
-	    DateFormat dateFormat = new SimpleDateFormat(strDateFormat);
-	    String formattedDate= dateFormat.format(date);
-	    SimpleMailMessage message= new SimpleMailMessage();
-		List<Employee> listEmployee=(List<Employee>) emRepository.findAll();
-		List<Employee>k= listEmployee.stream().filter(e->e.getOcc()>5).collect(Collectors.toList());
-		for(Employee in: k)
-		{
-			try {
-				Ms.sendBanEmail(in);
-				
-			} catch (MailException mailException) {
-				System.out.println(mailException);
-			}
-		}
-		
-		
 	
-}*/}
+	
+
+	}

@@ -50,6 +50,11 @@ public class EmployeeRestController {
 		}
 
 		// http://localhost:8081/SpringMVC/employee/modify-employee/2
+		/*@PutMapping("/modify-employee/{idemployee}")
+		public Employee modifyEmployee(@RequestBody Employee e,@PathVariable("idemployee") int idemployee) {
+			return employeeService.updateEmployee(e, idemployee);
+		}*/
+		// http://localhost:8081/SpringMVC/employee/modify-employee/2
 		@PutMapping("/modify-employee/{identreprise}")
 		public Employee modifyEmployee(@RequestBody Employee e,@PathVariable("identreprise") int identreprise) {
 			return employeeService.updateEmployee(e, identreprise);

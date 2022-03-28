@@ -10,5 +10,7 @@ import tn.esprit.spring.entities.Post;
 @Repository
 public interface PostRepository extends CrudRepository <Post, Integer> {
 
+	
+
 
 }
