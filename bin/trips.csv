@@ -1,0 +1,99 @@
+id,date,location,latitude,longitude,note,price
+15970,2015-03,"London, UK",51.5073510,-0.1277580,Business,100
+39386,2015-10,"Funchal, Portugal",32.6669330,-16.9240550,Run,100
+59263,2016-03,"Las Palmas de Gran Canaria, Las Palmas, Spain",28.1235460,-15.4362570,Run,100
+21379,2016-05,"Santa Cruz de La Palma, Santa Cruz de Tenerife, Spain",28.6839890,-17.7645750,Run,100
+53759,2016-05,"Oslo, Norway",59.9138690,10.7522450,Run,100
+1855,2016-06,"Venice, Metropolitan City of Venice, Italy",45.4408470,12.3155150,Tourism,200
+30805,2016-06,"Cortina d'Ampezzo, Province of Belluno, Italy",46.5404710,12.1356520,"Run, Hike, Via ferrata",200
+26960,2016-09,"Hanoi, Hoàn Kiếm, Hanoi, Vietnam",21.0277640,105.8341600,Tourism,200
+29114,2016-09,"Sa Pa, Lào Cai, Vietnam",22.3363610,103.8437850,"Run, Hike, Toursim",200
+30039,2016-09,"Hạ Long Bay, Thành phố Hạ Long, Quảng Ninh Province, Vietnam",20.9100510,107.1839020,"Tourism, Cayak",200
+9204,2016-09,"Monkey Island, Cat Ba, Cát Hải, Haiphong, Vietnam",20.7279520,107.0794130,"Tourism, Swim, Cayak",200
+48123,2016-10,"İstanbul, Türkiye",41.0082380,28.9783590,Tourism,200
+18653,2016-10,"Ürgüp, Nevşehir, Turkey",38.6311690,34.9121820,"Tourism, Run",200
+47957,2016-11,"Marrakech, Morroco",31.6294720,-7.9810840,Tourism,300
+46885,2016-11,"Asni, Morroco",31.2422530,-7.9865870,"Tourism, Run",300
+12369,2016-12,"Cape Town, South Africa",-33.9248680,18.4240550,"Tourism, Hike, Run",300
+29928,2016-12,"Johannesburg, South Africa",-26.2041030,28.0473050,Tourism,300
+42419,2016-12,"Kruger National Park, South Africa",-23.9883850,31.5547400,Tourism,500
+51832,2017-05,"Horta, Portugal",38.5348450,-28.6299810,Tourism,600
+47359,2017-05,"Pico Island, Portugal",38.4580490,-28.3228160,Run,700
+17429,2017-05,"Caldeira, 9900, Portugal",38.5833930,-28.7168850,Run,700
+12967,2017-05,"Lisbon, Portugal",38.7222520,-9.1393370,Tourism,700
+6842,2017-06,"Stockholm, Sweden",59.3293230,18.0685810,"Tourism, Run",700
+13089,2017-09,"Montreal, QC, Canada",45.5016890,-73.5672560,Tourism,700
+18461,2017-09,"Québec City, QC, Canada",46.8138780,-71.2079810,Tourism,700
+9036,2017-09,"La Malbaie, QC, Canada",47.6569680,-70.1521870,"Tourism, Run",700
+48311,2017-09,"New York, NY, USA",40.7127750,-74.0059730,Tourism,700
+7990,2017-09,"Toronto, ON, Canada",43.6532260,-79.3831840,Tourism,700
+56019,2017-09,"Ottawa, ON, Canada",45.4215300,-75.6971930,Tourism,700
+21977,2017-10,"Saint-Denis, Reunion",-20.8906600,55.4550540,Tourism,700
+37812,2017-10,"Saint Pierre, Reunion",-21.3222910,55.5025590,Tourism,700
+4729,2017-10,"Saint-Gilles, Reunion",-21.0538750,55.2286830,Tourism,700
+56825,2017-10,"Cilaos, Reunion",-21.1366170,55.4631340,Run,700
+39988,2017-10,"Piton des Neiges, Reunion",-21.0992843,55.4715156,Run,700
+59051,2017-10,"Cirque de Mafate, Reunion",-21.0499150,55.4272380,Run,700
+20099,2017-10,"Maïdo, Reunion",-21.0688884,55.3790232,Run,700
+58183,2017-10,"L'Ermitage-Les-Bains, Reunion",-21.0749000,55.2245400,Tourism,700
+29742,2018-03,"Florence, Metropolitan City of Florence, Italy",43.7695600,11.2558140,Tourism,700
+51658,2018-05,"Ajaccio, France",41.9192290,8.7386350,Tourism,700
+3954,2018-05,"Iles Sanguinaires, Ajaccio, France",41.8777780,8.5933330,Scuba diving,700
+18839,2018-05,"Serra-di-Ferro, France",41.7287090,8.7985110,Tourism,700
+2886,2018-05,"Bonifacio, France",41.3871740,9.1592690,Tourism,700
+23278,2018-05,"Lavezzi Islands, France",41.33749865,9.25333232,Swim,550
+28690,2018-05,"Porto-Vecchio, France",41.5913690,9.2783110,Tourism,550
+8580,2018-05,"Aiguilles de Bavella, 20122 Quenza, France",41.8095440,9.2129350,Hike,550
+3168,2018-05,"Guitera-les-Bains, France",41.9127840,9.0851270,Tourism,550
+18005,2018-05,"Ponte Di à Trinita (Pont Génois), 20168 Olivese, France",41.8632970,9.0582280,Hike,550
+17871,2018-06,"Florenville, Belgium",49.6977120,5.3119220,Run,550
+9452,2018-07,"Reykjavík, Iceland",64.1265210,-21.8174390,Tourism,550
+38402,2018-07,"Grindavik, Iceland",63.8441810,-22.4383820,Run,550
+44984,2018-07,"Geysir, Iceland",64.3103720,-20.3023600,Tourism,550
+10268,2018-07,"Gullfoss Falls, Iceland",64.3270720,-20.1199480,Toursim,550
+45856,2018-07,"Sólheimajökull, Iceland",63.5569440,-19.3027780,Toursim,550
+32138,2018-07,"Reynisfjara Beach, Iceland",63.4050970,-19.0561010,Tourism,550
+59435,2018-07,"Skógafoss, Iceland",63.5320520,-19.5113700,Tourism,550
+5891,2018-07,"Seljalandsfoss, Iceland",63.6156230,-19.9885690,Tourism,550
+38630,2018-07,"Vik, Iceland",63.4186320,-19.0060480,Tourism,550
+4943,2018-09,"Hanoi, Hoàn Kiếm, Hanoi, Vietnam",21.0277640,105.8341600,Tourism,550
+11188,2018-09,"Ho Chi Minh City, Vietnam",10.8230989,106.6296638,Tourism,550
+10866,2018-09,"Cu Chi Tunnels, Vietnam",11.1434467,106.4644785,Tourism,550
+59607,2018-09,"Krong Siem Reap, Cambodia",13.3403095,103.7228668,Tourism,400
+15528,2018-09,"Tonlé Sap, Cambodia",12.8054501,103.6134294,Tourism,400
+45258,2018-09,"Angkor Wat, Cambodia",13.4124693,103.864797,Tourism,400
+42841,2018-09,"Ta Prohm, Cambodia",13.4347941,103.8871154,Tourism,400
+22198,2018-09,"Bayon Temple, Cambodia",13.441554,103.8567193,Tourism,400
+29570,2018-09,"Phnom Kulen National Park, Cambodia",13.6436414,104.1444159,Tourism,400
+43993,2019-03,"Athen, Greece",37.97996,23.72049,Tourism,400
+6628,2019-03,"Park Filopappou Hill, Greece",37.9662718,23.71892,Hike,400
+54924,2019-03,"Acropolis of Athens, Greece",37.9706869,23.7203362,Tourism,400
+26538,2019-03,"Paros, Greece",37.0651291,25.1255666,Tourism,400
+35913,2019-03,"Ancient Marble Quarries, Greece",37.0845067,25.1975376,Tourism,400
+49495,2019-03,"Lefkes Village, Greece",37.0845067,25.1975376,Tourism,400
+9660,2019-03,"Paros Park, Greece",37.1484546,25.2209537,Hike,400
+2288,2019-03,"Santorini, Greece",36.4071334,25.3505906,Tourism,400
+23876,2019-03,"Mesaria, Greece",36.3977172,25.4394966,Tourism,400
+18237,2019-03,"Thera, Greece",36.4203259,25.4234157,Hike,400
+54118,2019-03,"Oia, Greece",36.4624196,25.3724056,Hike,400
+2872,2019-04,"Trieste, Italy",45.6522988,13.713622,Tourism,400
+49653,2019-04,"Buzet, Croatia",45.4089884,13.9546624,Run,300
+8574,2019-04,"Motovun, Croatia",45.3360666,13.7922035,Run,300
+16957,2019-04,"Oprtalj, Croatia",45.3750442,13.8033203,Run,300
+19123,2019-04,"Završje, Croatia",45.3672825,13.7498564,Run,300
+13419,2019-04,"Grožnjan, Croatia",45.3804677,13.7098765,Run,300
+17885,2019-04,"Umag, Croatia",45.4297384,13.5147623,Run,300
+43369,2019-08,"Edinburgh, United Kingdom",55.953252,-3.188267,Tourism,300
+48781,2019-08,"Edinburgh Castle, United Kingdom",55.9485947,-3.2021022,Tourism,300
+44970,2019-08,"Arthur’s Seat, Edinburgh, United Kingdom",55.9440817,-3.1705872,Run,300
+56489,2019-08,"Urquhart Castle, United Kingdom",57.3241399,-4.4441899,Tourism,300
+39524,2019-08,"Loch Ness, United Kingdom",57.2737239,-4.7818612,Tourism,300
+33822,2019-09,"Mindelo, Cabo verde",16.897404,-24.9949696,Tourism,300
+58513,2019-09,"Pico do Fogo, Cape Verde",14.9493998,-24.3491878,Hike,300
+25947,2019-09,"Sao Filipe, Cape Verde",14.8927285,-24.4983377,Tourism,300
+52029,2019-09,"Praia, Cape Verde",14.9364449,-23.5417492,Tourism,300
+5865,2019-09,"Cidade Velha, Cape Verde",14.9152969,-23.6080849,Tourism,300
+39716,2019-09,"Paul, Cape Verde",17.1516879,-25.0255144,Tourism,300
+25349,2019-09,"Cova, Cape Verde",17.1077,-25.0627,Hike,300
+11940,2020-01,"Marrakech, Morroco",31.6294720,-7.9810840,Tourism,300
+55802,2020-01,"Imlil, Morroco",31.1366479,-7.9274512,Tourism,300
