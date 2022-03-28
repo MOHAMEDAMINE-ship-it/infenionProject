@@ -42,7 +42,7 @@ public class User {
     @Enumerated(EnumType.STRING)
 	EmployeeType  employeeType;
     @OneToMany(cascade = CascadeType.ALL, mappedBy="complainer")
-//	@JsonIgnore
+	@JsonIgnore
 	private List<Complaint> complaints;
 
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="complainedAbout")

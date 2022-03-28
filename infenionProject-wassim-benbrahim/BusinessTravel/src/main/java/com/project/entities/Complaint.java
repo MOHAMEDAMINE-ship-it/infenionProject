@@ -36,14 +36,15 @@ public class Complaint implements Serializable {
 //    private String Topic;
 //	@NotNull(message="the description is required")
 //	@Size(min=2 ,message=" MessageComplaint hould have at least 2 carac")
-	private String MessageComplaint;
+	private String Message;
 //	private String ImageComplaint;
 	@Temporal(TemporalType.DATE)
 	private Date DateComplaint;
 	private boolean Cloture = false;
+	@JsonIgnore
 	@ManyToOne()
 	User complainer;
-
+	@JsonIgnore
 	@ManyToOne()
 	User complainedAbout;
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="complaint")

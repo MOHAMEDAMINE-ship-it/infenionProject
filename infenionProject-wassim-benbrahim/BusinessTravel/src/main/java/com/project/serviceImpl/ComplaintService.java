@@ -41,7 +41,7 @@ public class ComplaintService {
         c.setComplainedAbout(ucr);
         c.setDateComplaint(new Date());;
         
-      sendemailservice.sendSimpleEmail(ucr.getEmail(),   c.getMessageComplaint(),"reclamation");
+      sendemailservice.sendSimpleEmail(ucr.getEmail(),   c.getMessage(),"reclamation");
         return cr.save(c);//}
         //else return null;
     }
