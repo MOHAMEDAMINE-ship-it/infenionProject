@@ -1,0 +1,20 @@
+.card-header {
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 0; // Removes the default margin-bottom of <hN>
+  color:burlywood;
+  background-color: #d9bdb3;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.05);;
+
+
+}
+
+.bshadow {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(1px 1px 1px #FFFFFF);
+  opacity: .9;
+  background-color: aliceblue;
+
+}

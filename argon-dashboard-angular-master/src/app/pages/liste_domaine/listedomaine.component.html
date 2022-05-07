@@ -1,0 +1,115 @@
+<div class="header bg-gradient-danger pb-2 pt-2 pt-md-8">
+  <div class="container-fluid">
+    <div class="header-body">
+      <!-- Card stats -->
+    </div>
+  </div>
+</div>
+<!-- Page content -->
+<div class="container-fluid mt--7 pt-md-8">
+  <!-- Table -->
+
+  <div class="row">
+    <div class="col-md-9">
+
+    </div>
+    <div class="col-md-3">
+
+      <div class="media-body ml-2 d-none d-lg-block">
+        <button class="btn btn-icon btn-1  " type="submit" (click)="GoToList()" >
+          <span class="btn-inner--icon" ><i class="ni ni-fat-add " style="color: black;"></i></span>
+        </button>
+        <span class="mb-0 text-sm  font-weight-bold" style="color: black;">New Domaine</span>
+      </div>
+    </div>
+
+</div>
+<div id="imprimer">
+  <!-- Dark table -->
+  <div class="row mt-5">
+    <div class="col">
+      <div class="card bg-default shadow">
+        <div class="card-header border-0">
+          <h2 class="mb-0" style="color: rgb(178, 11, 11); padding-left: 40%">
+            Liste des Domaine
+          </h2>
+        </div>
+          <br />
+          <br />
+        <div class="table-responsive">
+          <table class="table align-items-center table-dark table-flush">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nom de domaine</th>
+
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let v of domaine ">
+
+                <td>
+                  {{v.id_Domaine}}
+                </td>
+                <td>
+                  {{v.nom}}
+                </td>
+
+                <td class="text-right">
+                  <div ngbDropdown placement="bottom-right">
+                    <a class="btn btn-sm btn-icon-only text-light"  ngbDropdownToggle>
+                      <i class="fas fa-ellipsis-v"></i>
+                    </a>
+                    <div ngbDropdownMenu class=" dropdown-menu-right dropdown-menu-arrow">
+                      <a class="dropdown-item" on (click)="delete(v.id_Domaine)">Delete</a>
+                      <a class="dropdown-item" routerLink="voyages/{{v.id}}">Edit</a>
+
+                    </div>
+                  </div>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<br>
+<button class="btn btn-primary btn-sm"style="margin-left: 20px; font-size: 100%;"(click)="print('imprimer')" >Imprimer</button>
+</div>
+
+<!-- <div class="alert-text"> -->
+  <!-- <table class="table">
+
+    <tr>
+      <th scope="col">Player</th>
+      <th scope="col">Gloobles</th>
+      <th scope="col">Za'taak</th>
+    </tr>
+    <tr>
+      <th scope="row">TR-7</th>
+      <td>7</td>
+      <td>4,569</td>
+      <td> <button class="btn btn-warning">like</button> </td>
+    </tr>
+    <tr>
+      <th scope="row">Khiresh Odo</th>
+      <td>7</td>
+      <td>7,223</td>
+      <td> <button class="btn btn-warning">like</button> </td>
+    </tr>
+    <tr>
+      <th scope="row">Mia Oolong</th>
+      <td>9</td>
+      <td>6,219</td>
+      <td> <button class="btn btn-warning">like</button> </td>
+    </tr>
+
+  </table>
+</div> -->
+
+

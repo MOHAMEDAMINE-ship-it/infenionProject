@@ -1,0 +1,169 @@
+<div class="header bg-gradient-danger pb-2 pt-2 pt-md-8">
+  <div class="container-fluid">
+    <div class="header-body">
+      <!-- Card stats -->
+    </div>
+  </div>
+</div>
+<!-- Page content -->
+<div class="container-fluid mt--7 pt-md-8">
+  <!-- Table -->
+  <div class="row">
+    <div class="col-md-9">
+    </div>
+    <div class="col-md-3">
+      <div class="media-body ml-2 d-none d-lg-block">
+        <button class="btn btn-icon btn-1  " type="submit"  (click)="GoToList()">
+          <span class="btn-inner--icon" ><i class="ni ni-fat-add " style="color: black;"></i></span>
+        </button>
+        <span class="mb-0 text-sm  font-weight-bold" style="color: black;">New Employée</span>
+      </div>
+    </div>
+</div>
+  <!-- Dark table -->
+  <div class="row mt-5">
+    <div class="col">
+      <div class="card bg-default shadow">
+        <div class="card-header border-0">
+          <h2 class="mb-0" style="color: rgb(178, 11, 11); padding-left: 40%">
+            Liste des Profils
+          </h2>
+         
+          <br>
+
+          
+          
+          
+          <div class="row">
+            
+            <br> <br>
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+              <div class="input-group input-group-alternative">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fas fa-search"></i></span>
+                </div>
+                <input class="form-control" placeholder="Taper le nom de profil"   [(ngModel)]="input2" type="text"  >
+              </div>
+            </div>
+          </div>
+          
+        </div>
+          <br />
+          <br />
+      
+        <div class="table-responsive">
+          <table class="table align-items-center table-dark table-flush">
+            <thead class="thead-dark">
+              <tr>
+                
+                <th scope="col">Image</th>
+                <th scope="col">NOM</th>
+                <th scope="col">prenom</th>
+                <th scope="col">CIN</th>
+                <th scope="col">Age</th>
+                <th scope="col">Number_Followers</th>
+                <th scope="col">Poupilarite</th>
+            
+                <th scope="col">QR Code</th>
+               <!--    <th scope="col">BadageQuizz</th>
+             -->  
+                
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let v of profil | filter : input2">
+                <th scope="row">
+                  <div class="media align-items-center">
+                    <a href="javascript:void(0)" class="avatar rounded-circle mr-3">
+                      <img alt="" src="../assets/images/{{v.image.name}}">
+                    </a>
+                    <div class="media-body">
+                      <span class="mb-0 text-sm"> </span>
+                    </div>
+                  </div>
+                </th>
+                <td>
+                  {{v.nom}}
+                </td>
+                <td>
+                  {{v.prenom}}
+                </td>
+                <td>
+                  {{v.cin}}
+                </td>
+                <td>
+                  {{v.age}}
+                </td>
+                <td>
+                  {{v.followersNbr}}
+                </td>
+                <td>
+                  {{v.poupilarite}}
+                </td>
+                <td  >
+                  <ngx-qrcode 
+      [elementType]="elementType" 
+      [value] = "v.cin"
+      cssClass = "aclass"
+      [width]=5
+      errorCorrectionLevel = "L">
+</ngx-qrcode>
+              </td>
+               <!--
+
+                <td>
+                  {{v.reactiviteBadge}}
+                </td>
+                <td>
+                  {{v.badageQuizz}}
+                </td>
+
+               --> 
+                
+                
+                <td class="text-right">
+                  <div ngbDropdown placement="bottom-right">
+                    <a class="btn btn-sm btn-icon-only text-light"  ngbDropdownToggle>
+                      <i class="fas fa-ellipsis-v"></i>
+                    </a>
+                    <div ngbDropdownMenu class=" dropdown-menu-right dropdown-menu-arrow">
+                      <a class="dropdown-item"  (click)="delete(1)">Delete</a>
+                      <a class="dropdown-item" href="javascript:void(0)">Another action</a>
+
+                    </div>
+                  </div>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <br />
+  <br />
+
+  <div class="col-xl-4">
+    <div class="card shadow">
+      <div class="card-header bg-transparent">
+        <div class="row align-items-center">
+          <div class="col">
+            <h2 class="mb-0">Age</h2>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <!-- Chart -->
+        <div class="chart">
+          <canvas id="chart-orders" class="chart-canvas"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>

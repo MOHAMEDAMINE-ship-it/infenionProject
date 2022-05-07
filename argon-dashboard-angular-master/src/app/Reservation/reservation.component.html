@@ -1,0 +1,46 @@
+
+<body style="background-image: url(../assets/img/az.jpg.jpg);" > 
+  
+  
+
+  <div class="test" >
+      
+    
+
+      <div class="container">
+          <form  [formGroup]="domainForm"  #send="ngForm"  class="appointment-form" id="appointment-form">
+              <h2>Remplir le formulaire suivante</h2>
+              <div class="form-group-1">
+                  <input type="text" name="Nom" id="Nom" formControlName="nom" placeholder="Nom"   required   />
+                  <input type="text" name="prenom" id="prenom"  formControlName="prenom" placeholder="prenom"  required />
+                  <input type="text" name="CIN" id="cin"  formControlName="cin" placeholder="CIN" required />
+                  <input type="number" name="age" id="age" formControlName="age"
+                   placeholder="age" required ngModel #age/>
+                   <fieldset _ngcontent-niw-c106="">
+                       <input _ngcontent-niw-c106="" type="file" name="image" accept="image/png, image/jpeg">
+                   </fieldset>
+                 
+                   <div class="select-list">
+                      <select name="domaine" id="domaine" formControlName="domaine" ngModel >
+                          <option slected value="">domaine</option>
+                          <option *ngFor="let s of domaine"value="s.id_Domaine">{{s.nom}}</option>
+                        
+                      </select>
+                  </div>
+              </div>
+              
+              <div class="form-check">
+                  <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
+                  <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree to the  <a href="#" class="term-service">Terms and Conditions</a></label>
+              </div>
+              <div class="form-submit">
+                  <input type="submit" name="submit" id="submit" class="submit" value="Request an appointment" (click)="addEmployee()" />
+              </div>
+          </form>
+      </div>
+
+  </div>
+
+  <!-- JS -->
+ 
+</body>

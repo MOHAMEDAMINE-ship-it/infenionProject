@@ -1,0 +1,89 @@
+<div class="header bg-gradient-danger pb-2 pt-2 pt-md-8">
+  <div class="container-fluid">
+    <div class="header-body">
+      <!-- Card stats -->
+    </div>
+  </div>
+</div>
+<!-- Page content -->
+<div class="container-fluid mt--7 pt-md-8">
+  <!-- Table -->
+
+
+
+    <div class="row">
+      <div class="col-md-9">
+
+      </div>
+      <div class="col-md-3">
+
+        <div class="media-body ml-2 d-none d-lg-block">
+          <button class="btn btn-icon btn-1  " type="submit" (click)="GoToListe()">
+            <span class="btn-inner--icon" ><i class="ni ni-bullet-list-67 " style="color: black;"></i></span>
+          </button>
+          <span class="mb-0 text-sm  font-weight-bold" style="color: black;">List Domaine</span>
+        </div>
+      </div>
+
+  </div>
+
+
+  <div class="row">
+    <div class="col">
+      <div class="card shadow">
+        <div class="card-header border-0">
+          <h2 class="mb-0" style="color: white; padding-left: 40%">
+            New Domain
+          </h2>
+        </div>
+        <br/>
+        <br/>
+        <form [formGroup]="domainForm" (ngSubmit)="onSubmit()" novalidate>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="form-group" style="padding-left: 10%">
+                <label>
+                  <h4>Nom de domaine</h4>
+                </label>
+
+
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="form-group" style="padding-left: 10%">
+
+                <input type="text" class="form-control form-control-alternative" formControlName="nom"
+                  id="nom" placeholder="name@example.com" />
+                <div *ngIf="
+                    getControl.nom.touched &&
+                    getControl.nom.invalid
+                  " class="text-danger">
+                  <div *ngIf="getControl.nom.errors.required">
+                    nom is required.
+                  </div>
+                  <div *ngIf="getControl.nom.errors.email">
+                    nom seems invalid.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="float-right">
+              <button type="submit" class="btn btn-outline-success" (click)="save()">
+                Save
+              </button>
+            </div>
+          </div>
+          <br />
+          <br />
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- Dark table -->
+  <br />
+  <br />
+</div>
